@@ -1,0 +1,6 @@
+[submodule "etc/glfw"]
+	path = etc/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "etc/glad"]
+	path = etc/glad
+	url = https://github.com/Dav1dde/glad.git
