@@ -21,4 +21,5 @@ target_link_libraries(textures glfw glad)
 target_include_directories(textures 
     PRIVATE
     "."
+    "../etc/stb"
 )

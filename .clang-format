@@ -1,0 +1,77 @@
+﻿# http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+TabWidth: 2
+IndentWidth: 2
+UseTab: Never
+BasedOnStyle: LLVM
+
+# Language: Cpp
+# Force pointers to the type for C++.
+# DerivePointerAlignment: false
+PointerAlignment: Middle
+
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: true
+
+AlignOperands: true
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackParameters: true
+
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: false
+
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: true
+
+
+BinPackArguments: false
+BinPackParameters: false
+
+ColumnLimit: 120
+IndentCaseLabels: true
+SpacesInParentheses: true
+Standard: Cpp11
+
+SpaceBeforeParens: true
+
+AllowShortFunctionsOnASingleLine: None
+# AllowShortBlocksOnASingleLine: None
+# AlwaysBreakAfterReturnType: All
+
+# new options clang-format v6
+
+SortUsingDeclarations: true
+
+CompactNamespaces: true
+FixNamespaceComments: true
+AlignEscapedNewlines: Right
+
+BreakBeforeInheritanceComma: true
+BreakConstructorInitializers: BeforeComma
+ConstructorInitializerIndentWidth: 2
+
+# IndentPPDirectives: AfterHash
+
+Cpp11BracedListStyle: true
+IndentCaseLabels: true
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: true
+  AfterStruct: true
+  AfterClass: true
+  AfterUnion: true
+  SplitEmptyFunction: true
+  AfterControlStatement: true
+  AfterFunction : true
+  AfterNamespace: false
+  BeforeCatch: true
+  BeforeElse: true
+  # AfterExternBlock: true
+  # IndentBraces: true
