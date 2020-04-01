@@ -42,7 +42,7 @@ int main( int argc, char const * argv[] )
 
   ::glEnable( GL_DEPTH_TEST );
 
-  GLuint texture = load_texture( "assets/3plzl01l.jpg" );
+  GLuint texture = load_texture( "assets/tree.jpg" );
 
   ::glActiveTexture( GL_TEXTURE0 );
   ::glBindTexture( GL_TEXTURE_2D, texture );
@@ -61,7 +61,7 @@ int main( int argc, char const * argv[] )
         st = texcoord;
       }
   )" );
-  
+
   GLuint fragment_shader = create_shader( GL_FRAGMENT_SHADER, R"(
       #version 450 core
 
@@ -69,10 +69,12 @@ int main( int argc, char const * argv[] )
 
       layout(location = 1) in vec2 st;
       layout(binding = 0) uniform sampler2D tex0;
+      uniform vec2 resolution = vec2(800, 600);
 
       void main()
       {
-        color = texture(tex0, st);
+        // color = texture(tex0, st);
+        color = texture(tex0, gl_FragCoord.xy / resolution);
       }
   )" );
 
@@ -175,9 +177,9 @@ GLuint create_draw_data()
   using vertex = struct { vec4 v; vec2 st; };
   
   constexpr vertex vertices[] = {
-    { -1, -1, 0, 1, {0, 1} },
-    {  1, -1, 0, 1, {1, 1} },
-    {  0,  1, 0, 1, {0, 0} },
+    { {-1, -1, 0, 1}, {0, 1} },
+    { { 1, -1, 0, 1}, {1, 1} },
+    { { 0,  1, 0, 1}, {0, 0} },
   };
 
   GLuint buffer = 0;
